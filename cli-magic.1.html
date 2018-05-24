@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='content-type' value='text/html;charset=utf8'>
+  <meta name='generator' value='Ronn/v0.7.3 (http://github.com/rtomayko/ronn/tree/0.7.3)'>
+  <title>cli-magic(1) - an introduction to command line interfaces</title>
+  <style type='text/css' media='all'>
+  /* style: man */
+  body#manpage {margin:0}
+  .mp {max-width:100ex;padding:0 9ex 1ex 4ex}
+  .mp p,.mp pre,.mp ul,.mp ol,.mp dl {margin:0 0 20px 0}
+  .mp h2 {margin:10px 0 0 0}
+  .mp > p,.mp > pre,.mp > ul,.mp > ol,.mp > dl {margin-left:8ex}
+  .mp h3 {margin:0 0 0 4ex}
+  .mp dt {margin:0;clear:left}
+  .mp dt.flush {float:left;width:8ex}
+  .mp dd {margin:0 0 0 9ex}
+  .mp h1,.mp h2,.mp h3,.mp h4 {clear:left}
+  .mp pre {margin-bottom:20px}
+  .mp pre+h2,.mp pre+h3 {margin-top:22px}
+  .mp h2+pre,.mp h3+pre {margin-top:5px}
+  .mp img {display:block;margin:auto}
+  .mp h1.man-title {display:none}
+  .mp,.mp code,.mp pre,.mp tt,.mp kbd,.mp samp,.mp h3,.mp h4 {font-family:monospace;font-size:14px;line-height:1.42857142857143}
+  .mp h2 {font-size:16px;line-height:1.25}
+  .mp h1 {font-size:20px;line-height:2}
+  .mp {text-align:justify;background:#fff}
+  .mp,.mp code,.mp pre,.mp pre code,.mp tt,.mp kbd,.mp samp {color:#131211}
+  .mp h1,.mp h2,.mp h3,.mp h4 {color:#030201}
+  .mp u {text-decoration:underline}
+  .mp code,.mp strong,.mp b {font-weight:bold;color:#131211}
+  .mp em,.mp var {font-style:italic;color:#232221;text-decoration:none}
+  .mp a,.mp a:link,.mp a:hover,.mp a code,.mp a pre,.mp a tt,.mp a kbd,.mp a samp {color:#0000ff}
+  .mp b.man-ref {font-weight:normal;color:#434241}
+  .mp pre {padding:0 4ex}
+  .mp pre code {font-weight:normal;color:#434241}
+  .mp h2+pre,h3+pre {padding-left:0}
+  ol.man-decor,ol.man-decor li {margin:3px 0 10px 0;padding:0;float:left;width:33%;list-style-type:none;text-transform:uppercase;color:#999;letter-spacing:1px}
+  ol.man-decor {width:100%}
+  ol.man-decor li.tl {text-align:left}
+  ol.man-decor li.tc {text-align:center;letter-spacing:4px}
+  ol.man-decor li.tr {text-align:right;float:right}
+  </style>
+</head>
+<!--
+  The following styles are deprecated and will be removed at some point:
+  div#man, div#man ol.man, div#man ol.head, div#man ol.man.
+
+  The .man-page, .man-decor, .man-head, .man-foot, .man-title, and
+  .man-navigation should be used instead.
+-->
+<body id='manpage'>
+  <div class='mp' id='man'>
+
+  <div class='man-navigation' style='display:none'>
+    <a href="#NAME">NAME</a>
+    <a href="#SYNOPSIS">SYNOPSIS</a>
+    <a href="#DESCRIPTION">DESCRIPTION</a>
+    <a href="#HISTORY">HISTORY</a>
+    <a href="#SHELL">SHELL</a>
+    <a href="#PROGRAMMS">PROGRAMMS</a>
+    <a href="#AUTHOR">AUTHOR</a>
+    <a href="#SEE-ALSO">SEE ALSO</a>
+  </div>
+
+  <ol class='man-decor man-head man head'>
+    <li class='tl'>cli-magic(1)</li>
+    <li class='tc'></li>
+    <li class='tr'>cli-magic(1)</li>
+  </ol>
+
+  <h2 id="NAME">NAME</h2>
+<p class="man-name">
+  <code>cli-magic</code> - <span class="man-whatis">an introduction to command line interfaces</span>
+</p>
+
+<h2 id="SYNOPSIS">SYNOPSIS</h2>
+
+<p>just read it ;)</p>
+
+<h2 id="DESCRIPTION">DESCRIPTION</h2>
+
+<p>This is an introduction to the command line interface (CLI) of modern unix
+operating systems. It provides an overview about the terminology, as well as
+the history of CLIs and shows how to use the command line for productive day to
+day work.</p>
+
+<h2 id="HISTORY">HISTORY</h2>
+
+<p>In the middle of the last century, early computers had rather primitive
+input/output interfaces. Both the program code and the input data were read
+from punch cards. The output of the computation would then be printed onto
+paper by printers attached to the computer.</p>
+
+<p>This was a batch process workflow rather than in interactive user session. In
+order to facilitate a proper utilization of those very expensive early
+machines, jobs piled up and programmers had to wait for a long time before
+getting the results of their programms compilation and then its execution.</p>
+
+<h3 id="Teletypewriter">Teletypewriter</h3>
+
+<p>In 1956 scientists at MIT were experimenting with attaching a teletypewriter to
+a computer to unify input and output. Even before the invention of the computer
+teletypewriters have been used for communication replacing the morse code based
+telegraphy.</p>
+
+<h3 id="Visual-Display-Units-glass-TTY-">Visual Display Units (glass TTY)</h3>
+
+<h3 id="Terminal-Emulators">Terminal Emulators</h3>
+
+<p>different escape sequences</p>
+
+<h3 id="Control-Codes">Control Codes</h3>
+
+<p><em>Ctrl-C</em></p>
+
+<p>You can use Ctrl-C in your terminal to abort a running program. This sends a
+SIGINT signal to the process currently executed by the shell. Most programs
+interpret it similar to SIGTERM wich calls for graceful termination.</p>
+
+<p><em>Ctrl-D</em></p>
+
+<p>Ctrl-D sends an end of line (EOL) character to the shell. The shell interprets
+end of line as the end of user input. It therefore has the same result as
+typing exit in the shell.</p>
+
+<p><em>Ctrl-U</em></p>
+
+<p>Ctrl-U cancels the currently inputted command line.</p>
+
+<p><em>Ctrl-K</em></p>
+
+<p>Ctrl-K cancels user input from the location of the cursor to the end of the line.</p>
+
+<p><em>Ctrl-Z</em></p>
+
+<p>Pause the currently executed program and return to the shell. You can resume
+stopped processes with <code>fg</code> or <code>bg</code>.</p>
+
+<p><em>Ctrl-R</em></p>
+
+<p>triggers reverse search through the command line history.</p>
+
+<p><em>Ctrl-L</em></p>
+
+<p>Clears the current content of the terminal starting with a clean prompt.</p>
+
+<h2 id="SHELL">SHELL</h2>
+
+<p>The Shell is the program directly connected to a terminal. It provides an
+interactive programming language allowing you to invoke different programs as
+well as combining them to accomplish a certain outcome. The difference between
+the shell and other interpreted programming languages like e.g. python is that
+in python most of the code is written to be run in the interpreter itself,
+whereas the shell is primarily starting other programs to to the work.</p>
+
+<h3 id="Prompt">Prompt</h3>
+
+<h3 id="current-working-directory">current working directory</h3>
+
+<h3 id="Variables-and-Environment-Varialbes">Variables and Environment Varialbes</h3>
+
+<h3 id="piping">piping</h3>
+
+<h3 id="brace-expension">brace expension</h3>
+
+<p>~/dev/customer1/{repo1, repo2}</p>
+
+<p>/home/bbr/dev/customer1/repo1 /home/bbr/dev/customer1/repo2</p>
+
+<h3 id="Tab-completion">Tab completion</h3>
+
+<h2 id="PROGRAMMS">PROGRAMMS</h2>
+
+<h3 id="man">man</h3>
+
+<h3 id="grep">grep</h3>
+
+<h3 id="sed">sed</h3>
+
+<h3 id="awk">awk</h3>
+
+<h2 id="AUTHOR">AUTHOR</h2>
+
+<p>Benjamin Brunzel <a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#98;&#101;&#110;&#x6a;&#97;&#x6d;&#x69;&#x6e;&#x2e;&#x62;&#x72;&#117;&#110;&#x7a;&#101;&#x6c;&#64;&#x69;&#x74;&#x65;&#x72;&#x61;&#x74;&#x65;&#x63;&#x2e;&#100;&#101;" data-bare-link="true">&#98;&#x65;&#x6e;&#106;&#x61;&#x6d;&#105;&#110;&#46;&#x62;&#x72;&#117;&#x6e;&#122;&#101;&#x6c;&#64;&#105;&#x74;&#101;&#x72;&#97;&#116;&#x65;&#x63;&#x2e;&#100;&#x65;</a></p>
+
+<h2 id="SEE-ALSO">SEE ALSO</h2>
+
+<ul>
+<li>In depth video lecture to the Unix command line: https://www.youtube.com/watch?v=07Q9oqNLXB4</li>
+<li>Video showing the compilation workflow of a <code>Fortran</code> programm on an IBM 1401: https://www.youtube.com/watch?v=uFQ3sajIdaM</li>
+<li>Time sharing concept and hard copy terminals (1963) https://www.youtube.com/watch?v=Q07PhW5sCEk</li>
+<li>see introduction to the Unix operating system (1982) https://www.youtube.com/watch?v=tc4ROCJYbm0</li>
+<li>List of terminal control codes available in <code>bash</code>: http://wiki.bash-hackers.org/scripting/terminalcodes</li>
+</ul>
+
+
+
+  <ol class='man-decor man-foot man foot'>
+    <li class='tl'></li>
+    <li class='tc'>May 2018</li>
+    <li class='tr'>cli-magic(1)</li>
+  </ol>
+
+  </div>
+</body>
+</html>

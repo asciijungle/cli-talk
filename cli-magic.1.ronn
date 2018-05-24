@@ -1,0 +1,122 @@
+cli-magic(1) -- an introduction to command line interfaces
+==========================================================
+
+## SYNOPSIS
+
+just read it ;)
+
+## DESCRIPTION
+
+This is an introduction to the command line interface (CLI) of modern unix
+operating systems. It provides an overview about the terminology, as well as
+the history of CLIs and shows how to use the command line for productive day to
+day work. 
+
+## HISTORY
+
+In the middle of the last century, early computers had rather primitive
+input/output interfaces. Both the program code and the input data were read
+from punch cards. The output of the computation would then be printed onto
+paper by printers attached to the computer.
+
+This was a batch process workflow rather than in interactive user session. In
+order to facilitate a proper utilization of those very expensive early
+machines, jobs piled up and programmers had to wait for a long time before
+getting the results of their programms compilation and then its execution.
+
+### Teletypewriter
+
+In 1956 scientists at MIT were experimenting with attaching a teletypewriter to
+a computer to unify input and output. Even before the invention of the computer
+teletypewriters have been used for communication replacing the morse code based
+telegraphy.
+
+### Visual Display Units (glass TTY)
+
+### Terminal Emulators
+
+different escape sequences
+
+### Control Codes
+
+
+*Ctrl-C*
+
+You can use Ctrl-C in your terminal to abort a running program. This sends a
+SIGINT signal to the process currently executed by the shell. Most programs
+interpret it similar to SIGTERM wich calls for graceful termination.
+
+*Ctrl-D*
+
+Ctrl-D sends an end of line (EOL) character to the shell. The shell interprets
+end of line as the end of user input. It therefore has the same result as
+typing exit in the shell.
+
+*Ctrl-U*
+
+Ctrl-U cancels the currently inputted command line.
+
+*Ctrl-K*
+
+Ctrl-K cancels user input from the location of the cursor to the end of the line.
+
+*Ctrl-Z*
+
+Pause the currently executed program and return to the shell. You can resume
+stopped processes with `fg` or `bg`.
+
+*Ctrl-R*
+
+triggers reverse search through the command line history.
+
+*Ctrl-L*
+
+Clears the current content of the terminal starting with a clean prompt.
+
+## SHELL
+
+The Shell is the program directly connected to a terminal. It provides an
+interactive programming language allowing you to invoke different programs as
+well as combining them to accomplish a certain outcome. The difference between
+the shell and other interpreted programming languages like e.g. python is that
+in python most of the code is written to be run in the interpreter itself,
+whereas the shell is primarily starting other programs to to the work.
+
+### Prompt
+
+### current working directory
+
+### Variables and Environment Varialbes
+
+### piping
+
+### brace expension
+
+~/dev/customer1/{repo1, repo2}
+
+/home/bbr/dev/customer1/repo1 /home/bbr/dev/customer1/repo2
+
+### Tab completion
+
+## PROGRAMMS
+
+### man 
+
+### grep
+
+### sed
+
+### awk
+
+## AUTHOR
+
+Benjamin Brunzel <benjamin.brunzel@iteratec.de>
+
+## SEE ALSO
+
+* In depth video lecture to the Unix command line: https://www.youtube.com/watch?v=07Q9oqNLXB4
+* Video showing the compilation workflow of a `Fortran` programm on an IBM 1401: https://www.youtube.com/watch?v=uFQ3sajIdaM
+* Time sharing concept and hard copy terminals (1963) https://www.youtube.com/watch?v=Q07PhW5sCEk
+* see introduction to the Unix operating system (1982) https://www.youtube.com/watch?v=tc4ROCJYbm0
+* List of terminal control codes available in `bash`: http://wiki.bash-hackers.org/scripting/terminalcodes
+
