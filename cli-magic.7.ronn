@@ -3,7 +3,7 @@ cli-magic(1) -- an introduction to command line interfaces
 
 ## SYNOPSIS
 
-just read it ;)
+wget -O - -o /dev/null https://raw.githubusercontent.com/asciijungle/cli-talk/master/cli-magic.7 | man /dev/stdin
 
 ## DESCRIPTION
 
@@ -88,6 +88,10 @@ whereas the shell is primarily starting other programs to to the work.
 
 ### Variables and Environment Varialbes
 
+*PATH*
+
+The path variable defines directories where the shell looks for executables that are directly known to the shell.
+
 ### piping
 
 ### brace expension
@@ -96,11 +100,13 @@ whereas the shell is primarily starting other programs to to the work.
 
 /home/bbr/dev/customer1/repo1 /home/bbr/dev/customer1/repo2
 
+### History
+
 ### Tab completion
 
 ## PROGRAMMS
 
-### man 
+### man
 
 ### grep
 
