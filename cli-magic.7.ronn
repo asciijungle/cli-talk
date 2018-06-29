@@ -80,19 +80,30 @@ interactive programming language allowing you to invoke different programs as
 well as combining them to accomplish a certain outcome. The difference between
 the shell and other interpreted programming languages like e.g. python is that
 in python most of the code is written to be run in the interpreter itself,
-whereas the shell is primarily starting other programs to to the work.
+whereas the shell is primarily starting other programs to do the work.
 
 ### Prompt
 
+The prompt is shown to indicate that the shell is ready for receiving input. It can be customized via the $PS1 variable. In your shell configuration you can do fancy stuff like calling programms and adding their output to the prompt.
+
 ### current working directory
 
-### Variables and Environment Varialbes
+There is always a current working directory from which relative paths will be interpreted. You can show the current working directory with the `pwd` command.
+
+### Variables and Environment Variables
 
 *PATH*
 
 The path variable defines directories where the shell looks for executables that are directly known to the shell.
 
 ### piping
+
+You can combine various commands with the `|` pipe operator. The output of the first command (Stdout) will be fed into the input (Stdin) of the second command.
+For example: ls | less
+
+## process substitution
+
+Process substitution allows a process's input or output to be referred to using a filename.  It takes the form of <(list) or >(list).  The process list is run asynchronously, and its input or  output  appears  as  a  filename. This is a bit like piping into files.
 
 ### brace expension
 
@@ -102,21 +113,58 @@ The path variable defines directories where the shell looks for executables that
 
 ### History
 
+The Shell writes all executed commands into a history file which is shell specific. For bash it is ~/.bash_history. You can browse the history via the `history` command. You can also browse the last commands via arrow up, arow down. Remember: you can also search the history in reverse via CTRL-R.
+
 ### Tab completion
+
+The shell has a lot of convenience functions. One of them is the tab completion feature. At almost any time you can complete using tab. This depends on the program and the shell implementation. You should look into ZSH if you want advanced tab completion.
+
+## Aliases
+
+You can define command aliases in your shell's config file to define shortcuts. For bash thats ~/.bashrc
 
 ## PROGRAMMS
 
+Unix comes with a lot of utility programs that you can combine to write shell scripts.
+
 ### man
+
+Shows the manual of a given program. This talk is a man page too ;)
 
 ### grep
 
+grep searches stdin for a given string. grep -r can search recursively in all files in a directory.
+
+### less
+
+a pager that allows you to scroll an input in both ways. It also provides a search functionality.
+
 ### sed
 
+sed is the "stream editor" it allows for advanced manipulation of the input stream.
+
 ### awk
+
+pattern scanning and processing language. You can do advanced stuff with table shaped data.
+
+### uniq
+
+remove or count redundant lines in a sorted input stream.
+
+### sort
+
+sorts a stream in various ways.
+
+## Terminal multiplexing
+
+### tmux
+
+### screen
 
 ## AUTHOR
 
 Benjamin Brunzel <benjamin.brunzel@iteratec.de>
+Harald Berner <harald.berner@iteratec.de>
 
 ## SEE ALSO
 

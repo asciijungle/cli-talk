@@ -58,7 +58,10 @@
     <a href="#DESCRIPTION">DESCRIPTION</a>
     <a href="#HISTORY">HISTORY</a>
     <a href="#SHELL">SHELL</a>
+    <a href="#process-substitution">process substitution</a>
+    <a href="#Aliases">Aliases</a>
     <a href="#PROGRAMMS">PROGRAMMS</a>
+    <a href="#Terminal-multiplexing">Terminal multiplexing</a>
     <a href="#AUTHOR">AUTHOR</a>
     <a href="#SEE-ALSO">SEE ALSO</a>
   </div>
@@ -76,7 +79,7 @@
 
 <h2 id="SYNOPSIS">SYNOPSIS</h2>
 
-<p>just read it ;)</p>
+<p>wget -O - -o /dev/null https://raw.githubusercontent.com/asciijungle/cli-talk/master/cli-magic.7 | man /dev/stdin</p>
 
 <h2 id="DESCRIPTION">DESCRIPTION</h2>
 
@@ -152,19 +155,30 @@ interactive programming language allowing you to invoke different programs as
 well as combining them to accomplish a certain outcome. The difference between
 the shell and other interpreted programming languages like e.g. python is that
 in python most of the code is written to be run in the interpreter itself,
-whereas the shell is primarily starting other programs to to the work.</p>
+whereas the shell is primarily starting other programs to do the work.</p>
 
 <h3 id="Prompt">Prompt</h3>
 
+<p>The prompt is shown to indicate that the shell is ready for receiving input. It can be customized via the $PS1 variable. In your shell configuration you can do fancy stuff like calling programms and adding their output to the prompt.</p>
+
 <h3 id="current-working-directory">current working directory</h3>
 
-<h3 id="Variables-and-Environment-Varialbes">Variables and Environment Varialbes</h3>
+<p>There is always a current working directory from which relative paths will be interpreted. You can show the current working directory with the <code>pwd</code> command.</p>
+
+<h3 id="Variables-and-Environment-Variables">Variables and Environment Variables</h3>
 
 <p><em>PATH</em></p>
 
 <p>The path variable defines directories where the shell looks for executables that are directly known to the shell.</p>
 
 <h3 id="piping">piping</h3>
+
+<p>You can combine various commands with the <code>|</code> pipe operator. The output of the first command (Stdout) will be fed into the input (Stdin) of the second command.
+For example: ls | less</p>
+
+<h2 id="process-substitution">process substitution</h2>
+
+<p>Process substitution allows a process's input or output to be referred to using a filename.  It takes the form of <var>(list) or </var>(list).  The process list is run asynchronously, and its input or  output  appears  as  a  filename. This is a bit like piping into files.</p>
 
 <h3 id="brace-expension">brace expension</h3>
 
@@ -174,21 +188,58 @@ whereas the shell is primarily starting other programs to to the work.</p>
 
 <h3 id="History">History</h3>
 
+<p>The Shell writes all executed commands into a history file which is shell specific. For bash it is ~/.bash_history. You can browse the history via the <code>history</code> command. You can also browse the last commands via arrow up, arow down. Remember: you can also search the history in reverse via CTRL-R.</p>
+
 <h3 id="Tab-completion">Tab completion</h3>
+
+<p>The shell has a lot of convenience functions. One of them is the tab completion feature. At almost any time you can complete using tab. This depends on the program and the shell implementation. You should look into ZSH if you want advanced tab completion.</p>
+
+<h2 id="Aliases">Aliases</h2>
+
+<p>You can define command aliases in your shell's config file to define shortcuts. For bash thats ~/.bashrc</p>
 
 <h2 id="PROGRAMMS">PROGRAMMS</h2>
 
+<p>Unix comes with a lot of utility programs that you can combine to write shell scripts.</p>
+
 <h3 id="man">man</h3>
+
+<p>Shows the manual of a given program. This talk is a man page too ;)</p>
 
 <h3 id="grep">grep</h3>
 
+<p>grep searches stdin for a given string. grep -r can search recursively in all files in a directory.</p>
+
+<h3 id="less">less</h3>
+
+<p>a pager that allows you to scroll an input in both ways. It also provides a search functionality.</p>
+
 <h3 id="sed">sed</h3>
+
+<p>sed is the "stream editor" it allows for advanced manipulation of the input stream.</p>
 
 <h3 id="awk">awk</h3>
 
+<p>pattern scanning and processing language. You can do advanced stuff with table shaped data.</p>
+
+<h3 id="uniq">uniq</h3>
+
+<p>remove or count redundant lines in a sorted input stream.</p>
+
+<h3 id="sort">sort</h3>
+
+<p>sorts a stream in various ways.</p>
+
+<h2 id="Terminal-multiplexing">Terminal multiplexing</h2>
+
+<h3 id="tmux">tmux</h3>
+
+<h3 id="screen">screen</h3>
+
 <h2 id="AUTHOR">AUTHOR</h2>
 
-<p>Benjamin Brunzel <a href="&#109;&#97;&#x69;&#108;&#116;&#111;&#58;&#x62;&#101;&#110;&#106;&#97;&#x6d;&#x69;&#110;&#x2e;&#x62;&#x72;&#x75;&#x6e;&#122;&#x65;&#x6c;&#64;&#x69;&#x74;&#x65;&#114;&#97;&#116;&#x65;&#99;&#46;&#100;&#x65;" data-bare-link="true">&#98;&#x65;&#x6e;&#x6a;&#x61;&#x6d;&#x69;&#x6e;&#46;&#x62;&#114;&#117;&#110;&#x7a;&#x65;&#x6c;&#x40;&#x69;&#x74;&#x65;&#114;&#97;&#116;&#x65;&#x63;&#46;&#100;&#x65;</a></p>
+<p>Benjamin Brunzel <a href="&#x6d;&#97;&#105;&#x6c;&#116;&#111;&#58;&#98;&#x65;&#x6e;&#x6a;&#x61;&#x6d;&#x69;&#110;&#x2e;&#98;&#114;&#117;&#110;&#122;&#101;&#108;&#x40;&#x69;&#116;&#x65;&#114;&#x61;&#x74;&#x65;&#x63;&#46;&#x64;&#101;" data-bare-link="true">&#98;&#101;&#110;&#106;&#x61;&#x6d;&#x69;&#110;&#46;&#98;&#x72;&#x75;&#110;&#x7a;&#x65;&#108;&#x40;&#105;&#x74;&#101;&#x72;&#x61;&#x74;&#x65;&#99;&#46;&#100;&#x65;</a>
+Harald Berner <a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x68;&#x61;&#x72;&#x61;&#108;&#x64;&#46;&#x62;&#101;&#x72;&#x6e;&#101;&#114;&#x40;&#x69;&#116;&#101;&#114;&#x61;&#x74;&#x65;&#99;&#x2e;&#100;&#101;" data-bare-link="true">&#104;&#97;&#x72;&#97;&#108;&#x64;&#x2e;&#x62;&#101;&#114;&#x6e;&#x65;&#x72;&#x40;&#x69;&#116;&#101;&#114;&#x61;&#x74;&#x65;&#x63;&#x2e;&#100;&#x65;</a></p>
 
 <h2 id="SEE-ALSO">SEE ALSO</h2>
 
